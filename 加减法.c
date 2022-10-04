@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<time.h>
 #include<math.h>
-int answer(int a,char f,int b)   //¼ÆËãÔËËã·ûÎªÒ»¸öÊ±ÌâÄ¿µÄ½á¹û
+int answer(int a,char f,int b)   //è®¡ç®—è¿ç®—ç¬¦ä¸ºä¸€ä¸ªæ—¶é¢˜ç›®çš„ç»“æœ
 {
 	int c;
 	if(f=='+')
@@ -11,7 +11,7 @@ int answer(int a,char f,int b)   //¼ÆËãÔËËã·ûÎªÒ»¸öÊ±ÌâÄ¿µÄ½á¹û
 	c=a-b;
 	return c;
 }
-int answer1(int a,char f,int b,char f1,int c)  //¼ÆËãÔËËã·ûÎªÁ½¸öÊ±ÌâÄ¿µÄ½á¹û
+int answer1(int a,char f,int b,char f1,int c)  //è®¡ç®—è¿ç®—ç¬¦ä¸ºä¸¤ä¸ªæ—¶é¢˜ç›®çš„ç»“æœ
 {
 	int c1;
 	if((f=='+')&&(f1=='+'))
@@ -24,7 +24,7 @@ int answer1(int a,char f,int b,char f1,int c)  //¼ÆËãÔËËã·ûÎªÁ½¸öÊ±ÌâÄ¿µÄ½á¹û
 		c1=a-b-c;
 	return c1;
 }
-void  check(int *x,int e,int x2)  //¼ì²éËæ»ú³öÀ´µÄÊıÊÇ·ñÖØ¸´
+void  check(int *x,int e,int x2)  //æ£€æŸ¥éšæœºå‡ºæ¥çš„æ•°æ˜¯å¦é‡å¤
 	{
 		while(1)
 		{ 
@@ -52,13 +52,13 @@ int main()
 	int i,n=0,j,s,s1,x0,y0,z0,h;
 	int x[500],y[500],z[500],jieguo[500];
 	char ysf,ysf1;
-	printf("ÇëÊäÈëÌâÄ¿ÊıÁ¿£¨1-500£©£º");     
-	scanf("%d",&n);                               //¼üÅÌÊäÈëÊı×Ö¿ØÖÆÌâÄ¿ÊıÁ¿£¬ÔÚ1-500·¶Î§ÄÚ
+	printf("è¯·è¾“å…¥é¢˜ç›®æ•°é‡ï¼ˆ1-500ï¼‰ï¼š");     
+	scanf("%d",&n);                               //é”®ç›˜è¾“å…¥æ•°å­—æ§åˆ¶é¢˜ç›®æ•°é‡ï¼Œåœ¨1-500èŒƒå›´å†…
 	if(n<=0)
-		{printf("ÌâÄ¿Á¿¹ıĞ¡£¬²»ÄÜÍµÀÁÅ¶£¬ÇëÖØĞÂÊäÈë");
+		{printf("é¢˜ç›®é‡è¿‡å°ï¼Œä¸èƒ½å·æ‡’å“¦ï¼Œè¯·é‡æ–°è¾“å…¥");
 	scanf("%d",&n);}
 	if(n>499)
-		{printf("ÌâÄ¿Á¿¹ı´ó£¬ÇëÖØĞÂÊäÈë");
+		{printf("é¢˜ç›®é‡è¿‡å¤§ï¼Œè¯·é‡æ–°è¾“å…¥");
 	scanf("%d",&n);}
 	if((fp1=fopen("d:\\Exercises.txt","w+"))==NULL)
 	{
@@ -72,14 +72,14 @@ int main()
 	}
 	srand(time(0));
 	
-	for(i=0;i<n;i++)        //Ëæ»úÌâÄ¿ÖĞµÄÊı×Ö
+	for(i=0;i<n;i++)        //éšæœºé¢˜ç›®ä¸­çš„æ•°å­—
 	{
 		s=rand()%2;
 		s1=rand()%2;
 		x0=rand()%99+1;
 		y0=rand()%99+1;
 		z0=rand()%99+1;
-		if(s==0)          //Ëæ»úÌâÄ¿ÖĞÔËËã·ûµÄ¸öÊı
+		if(s==0)          //éšæœºé¢˜ç›®ä¸­çš„è¿ç®—ç¬¦
 			ysf='+';
 		else
 			ysf='-';
@@ -93,22 +93,22 @@ int main()
 	
 		if(i>0)
 		{
-			check(x,i,x0);    //¼ì²éËæ»ú³öÀ´µÄÊı×ÖÊÇ·ñÖØ¸´
+			check(x,i,x0);    //æ£€æŸ¥éšæœºå‡ºæ¥çš„æ•°å­—æ˜¯å¦é‡å¤
 			check(y,i,y0);
 			check(z,i,z0);
 		}
 		h=rand()%2;
-		if(h==0)                               //Ëæ»úÔËËã·û¸öÊı£¬h==0Ê±ÔËËã·ûÎª1£¬·ñÔòÔËËã·ûÎª2
+		if(h==0)                               //éšæœºè¿ç®—ç¬¦ä¸ªæ•°ï¼Œh==0æ—¶è¿ç®—ç¬¦ä¸º1ï¼Œå¦åˆ™è¿ç®—ç¬¦ä¸º2
 		{jieguo[i]=answer(x[i],ysf,y[i]);
-		printf("ËÄÔòÔËËãÌâÄ¿%d:%d%c%d=\n",i+1,x[i],ysf,y[i]);
-    fprintf(fp1,"ËÄÔòÔËËãÌâÄ¿%d:%d%c%d=\n",i+1,x[i],ysf,y[i]);    //ÔËËã·ûÎª1¸öÊ±£¬½«ÌâÄ¿£¬´ğ°¸·Ö±ğĞ´ÈëÎÄ¼şExercises.txtºÍAnswers.txtÖĞ
-    fprintf(fp2,"ËÄÔòÔËËãÌâÄ¿%d:%d%c%d=%d\n",i+1,x[i],ysf,y[i],jieguo[i]);
+		printf("å››åˆ™è¿ç®—é¢˜ç›®%d:%d%c%d=\n",i+1,x[i],ysf,y[i]);
+    fprintf(fp1,"å››åˆ™è¿ç®—é¢˜ç›®%d:%d%c%d=\n",i+1,x[i],ysf,y[i]);    //è¿ç®—ç¬¦ä¸º1ä¸ªæ—¶ï¼Œå°†é¢˜ç›®ï¼Œç­”æ¡ˆåˆ†åˆ«å†™å…¥æ–‡ä»¶Exercises.txtå’ŒAnswers.txtä¸­
+    fprintf(fp2,"å››åˆ™è¿ç®—é¢˜ç›®%d:%d%c%d=%d\n",i+1,x[i],ysf,y[i],jieguo[i]);
 		}
 		else
 		{	jieguo[i]=answer1(x[i],ysf,y[i],ysf1,z[i]);
-		printf("ËÄÔòÔËËãÌâÄ¿%d:%d%c%d%c%d=\n",i+1,x[i],ysf,y[i],ysf1,z[i]);
-    fprintf(fp1,"ËÄÔòÔËËãÌâÄ¿%d:%d%c%d%c%d=\n",i+1,x[i],ysf,y[i],ysf1,z[i]);     //ÔËËã·ûÎª2¸öÊ±£¬½«ÌâÄ¿£¬´ğ°¸·Ö±ğĞ´ÈëÎÄ¼şExercises.txtºÍAnswers.txtÖĞ 
-	fprintf(fp2,"ËÄÔòÔËËãÌâÄ¿%d:%d%c%d%c%d=%d\n",i+1,x[i],ysf,y[i],ysf1,z[i],jieguo[i]);
+		printf("å››åˆ™è¿ç®—é¢˜ç›®%d:%d%c%d%c%d=\n",i+1,x[i],ysf,y[i],ysf1,z[i]);
+    fprintf(fp1,"å››åˆ™è¿ç®—é¢˜ç›®%d:%d%c%d%c%d=\n",i+1,x[i],ysf,y[i],ysf1,z[i]);     //è¿ç®—ç¬¦ä¸º2ä¸ªæ—¶ï¼Œå°†é¢˜ç›®ï¼Œç­”æ¡ˆåˆ†åˆ«å†™å…¥æ–‡ä»¶Exercises.txtå’ŒAnswers.txtä¸­ 
+	fprintf(fp2,"å››åˆ™è¿ç®—é¢˜ç›®%d:%d%c%d%c%d=%d\n",i+1,x[i],ysf,y[i],ysf1,z[i],jieguo[i]);
 	    }
 	}
 		
